@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://sarahbat.github.io/streetview.html -->
+<html jstcache="0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.gm-err-container{height:100%;width:100%;display:table;background-color:#e0e0e0;position:relative;left:0;top:0}.gm-err-content{border-radius:1px;padding-top:0;padding-left:10%;padding-right:10%;position:static;vertical-align:middle;display:table-cell}.gm-err-content a{color:#4285f4}.gm-err-icon{text-align:center}.gm-err-title{margin:5px;margin-bottom:20px;color:#616161;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:24px}.gm-err-message{margin:5px;color:#757575;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:12px}.gm-err-autocomplete{padding-left:20px;background-repeat:no-repeat;background-size:15px 15px}
+</style><style type="text/css">.gm-control-active img{box-sizing:content-box;pointer-events:none}.gm-control-active:hover img:nth-child(1),.gm-control-active:active img:nth-child(1),.gm-control-active:active img:nth-child(2){display:none}
+</style><link type="text/css" rel="stylesheet" href="./Street View containers_files/css"><style type="text/css">.gm-ui-hover-effect{opacity:.7}.gm-ui-hover-effect:hover{opacity:1}
+</style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
+    
+    <title>Street View containers</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="./Street View containers_files/js"></script>
+   
+    <script>
+      
+// Patterned after Google Developers documentation 
+// https://developers.google.com/maps/documentation/javascript/streetview
+function initialize() {
+  var params = getQueryParams();
+  var viewLocation = new google.maps.LatLng(params.lat, params.lon);
+  var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('map-canvas'), {
+        position: viewLocation,
+        pov: {
+          heading: 198,
+          pitch: 0
+        }
+      });
+  //map.setStreetView(panorama);
+}
+
+function getQueryParams(){
+    var params = {};
+    var query = window.location.search.substring(1);
+    console.log("Params: " + query + " length: " + query.length);
+    if (query.length === 0) 
+    {
+      query = "lat=47.6480693&lon=-122.3379813";
+    }
+    console.log("query: " + query);
+      
+      
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair.length == 2)
+        {
+            params[pair[0]] = pair[1];
+        }
+     }
+     return params;
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  <script type="text/javascript" charset="UTF-8" src="./Street View containers_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/geometry.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/streetview.js.download"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/controls.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/imagery_viewer.js.download"></script><style>.widget-scene{width:100%;height:100%;overflow:hidden;position:absolute;z-index:0;background-color:black}.keynav-mode .widget-scene:focus::after{content:'';border:2px solid #4d90fe;box-sizing:border-box;height:100%;pointer-events:none;position:absolute;width:100%;z-index:1}.print-mode .widget-scene:focus::after{display:none}.widget-scene-effects{position:absolute;left:0;top:0;z-index:2}.widget-scene-imagery-render{position:absolute;left:0;top:0;z-index:1;background-color:black}.widget-scene-imagery-iframe{position:absolute}.widget-scene .canvas-renderer{position:absolute;left:0;top:0}.widget-scene-canvas{position:absolute;left:0;top:0;background-color:black}.widget-scene-capture-canvas{position:relative;z-index:3}.tile-image-3d{-webkit-perspective:1000;-webkit-backface-visibility:hidden;perspective:1000;backface-visibility:hidden;-moz-perspective:1000;-moz-backface-visibility:hidden;-o-perspective:1000;-o-backface-visibility:hidden}.accelerated{-webkit-transform:translateZ(0);transform:translateZ(0)}@media print{.widget-scene{background:white;position:static;overflow:visible}.widget-scene-canvas{display:block;background:white}.app-globe-mode .widget-scene-canvas{background:black}.widget-scene-imagery-render{position:relative;background:white;z-index:4}.widget-scene-imagery-iframe{position:relative;left:50% !important;transform:translateX(-50%);-webkit-transform:translateX(-50%)}.widget-scene .canvas-renderer,.widget-scene .canvas-container,.widget-scene canvas{position:static !important}.canvas-renderer+.widget-scene-canvas{display:none !important}.widget-scene-capture-canvas+.widget-scene-canvas,.widget-scene-capture-canvas+.canvas-renderer{display:none !important}.widget-scene-canvas{width:100% !important;height:auto !important;-webkit-transform:none !important;transform:none !important}}.print-mode .widget-scene{background:white;position:static;overflow:visible}.print-mode .widget-scene-canvas{display:block;background:white}.print-mode .app-globe-mode .widget-scene-canvas{background:black}.print-mode .widget-scene-imagery-render{position:relative;background:white;z-index:4}.print-mode .widget-scene-imagery-iframe{position:relative;left:50% !important;transform:translateX(-50%);-webkit-transform:translateX(-50%)}.print-mode .widget-scene .canvas-renderer,.print-mode .widget-scene .canvas-container,.print-mode .widget-scene canvas{position:static !important}.print-mode .canvas-renderer+.widget-scene-canvas{display:none !important}.print-mode .widget-scene-capture-canvas+.widget-scene-canvas,.print-mode .widget-scene-capture-canvas+.canvas-renderer{display:none !important}</style><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/marker.js.download"></script><style>.gm-iv-container{width:27px;margin-top:10px;border-right:1px solid #666;background-color:#222222;opacity:0.8;font-family:Roboto,Arial}.gm-iv-small-container{height:56px}.gm-iv-large-container{height:72px;padding-top:14px}.gm-iv-close{width:27px;height:27px;margin-top:13px;outline-color:#000;display:inline-block}.gm-iv-back{display:inline-block;height:15px;width:15px;padding:6px}.gm-iv-back-icon{cursor:pointer;overflow:hidden;width:15px;height:15px;position:absolute;background-position:-3px -70px}.gm-iv-back-icon:hover{background-position:-40px -70px}.gm-iv-back-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9.png);background-size:164px 175px}.gm-iv-back-icon-rtl{cursor:pointer;overflow:hidden;width:15px;height:15px;position:absolute;background-position:28px -70px}.gm-iv-back-icon-rtl:hover{background-position:65px -70px}@media (-webkit-min-device-pixel-ratio:1.2),(min-resolution:1.2dppx),(min-resolution:116dpi){.gm-iv-back-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9_hdpi.png)}}</style><script type="text/javascript" charset="UTF-8" src="./Street View containers_files/geocoder.js.download"></script><style>.gm-iv-address{background-color:#222222;opacity:0.8;font-family:Roboto,Arial;outline-color:#000;border-bottom-right-radius:2px;border-top-right-radius:2px;display:inline-block;padding:6px 8px;margin-top:10px;height:56px;box-sizing:border-box}.gm-iv-address-large{height:86px}.gm-iv-address-description{display:inline-block;min-width:107px;max-width:310px;vertical-align:top;position:relative;height:44px;padding-right:30px;box-sizing:border-box}.gm-iv-short-address-description{color:#fff;font-weight:bold;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-bottom:2px}.gm-iv-long-address-description{color:#ccc;font-weight:normal;font-size:11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-width:70px}.gm-iv-vertical-separator{height:56px;display:inline-block;width:1px;top:10px;right:28px;position:absolute;background:-webkit-linear-gradient(top,#404040,#666,#404040);background:-moz-linear-gradient(top,#404040,#666,#404040);background:-ms-linear-gradient(top,#404040,#666,#404040);background:-linear-gradient(top,#404040,#666,#404040)}.gm-iv-marker{display:inline-block;height:25px;width:13px;right:8px;position:absolute;top:28px}.gm-iv-marker-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9.png);background-size:164px 175px}.gm-iv-marker-icon{overflow:hidden;width:13px;height:21px;position:absolute;background-position:-17px -50px}.gm-iv-marker-icon:hover{background-position:-1px -50px}.gm-iv-horizontal-separator{height:1px;margin-left:-8px;margin-right:-8px;margin-bottom:6px;background:-webkit-linear-gradient(left,#404040,#666,#404040);background:-moz-linear-gradient(left,#404040,#666,#404040);background:-ms-linear-gradient(left,#404040,#666,#404040);background:-linear-gradient(left,#404040,#666,#404040)}.gm-iv-address-link{position:absolute;top:48px}.gm-iv-address-custom p{color:#777;text-decoration:none;font-size:11px}.gm-iv-address-link a{color:#5c8dcc;text-decoration:none;font-size:11px}.gm-iv-address-link a:hover{text-decoration:underline}.gm-iv-profile-link{color:#fff;font-weight:bold;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.gm-iv-profile-url a>.iv-profile-link:hover{text-decoration:underline}.gm-iv-profile-url a{text-decoration:none}.gm-iv-timeline{min-width:116px;max-width:326px;color:#ccc;font-weight:normal;font-size:11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top:6px;margin-right:-8px;margin-left:-8px;padding-right:8px;padding-left:8px;box-sizing:border-box}.gm-iv-timeline-description{display:inline-block;margin-top:2px;vertical-align:top}.gm-iv-timeline-description-details{float:left}.gm-iv-timeline-description-separator{padding:0px 2px;float:left}.gm-iv-timeline-wrapper:hover .gm-iv-timeline-description{color:white}.gm-iv-timeline-icon-wrapper{display:inline-block;height:15px;width:26px}.gm-iv-timeline-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9.png);background-size:164px 175px}@media (-webkit-min-device-pixel-ratio:1.2),(min-resolution:1.2dppx),(min-resolution:116dpi){.gm-iv-timeline-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9_hdpi.png)}.gm-iv-marker-icon-background{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/sv9_hdpi.png)}}.gm-iv-timeline-icon{background-position:-37px -50px;overflow:hidden;width:26px;height:15px;position:absolute}.gm-iv-timeline-wrapper:hover .gm-iv-timeline-icon{background-position:-65px -50px}</style></head>
+  <body jstcache="0">
+    <div id="map-canvas" style="position: relative; background-color: rgb(229, 227, 223); overflow: hidden;" jstcache="0"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="./Street View containers_files/icon_error.png" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Oops! Something went wrong.</div><div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div></div></div></div>
+  
+
+</body></html>
